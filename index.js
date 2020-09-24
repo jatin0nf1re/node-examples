@@ -1,4 +1,4 @@
-var rect = require('./node-examples/rect.js');
+var rect = require('./rect.js');
 
 function solveRect(l,b){
     if(l<=0 || b<=0){
