@@ -1,12 +1,15 @@
 var rect = require('./rect.js');
 
 function solveRect(l,b){
-    if(l<=0 || b<=0){
-        console.log("Invalid values of dimension");
-    }else{
-        console.log("Area of rectangle is - " + rect.area(l,b));
-        console.log("Perimeter of rectangle is - " + rect.perimeter(l,b));
-    }
+    console.log("Solving For : l=" + l, ' and b=' + b);
+    rect(l, b, (err, rectangle) => {
+        if(err){
+            console.log("ERROR : " + err.message);
+        }else{
+            console.log("The area and perimeter for rectangle of length :" + l + " breadth:" + b + " are " + rectangle.area() + " and " + rectangle.perimeter());
+        }
+
+    });
 }
 
 solveRect(2,3);
